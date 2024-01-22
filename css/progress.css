@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+.circle{
+    width:100%;
+    /* margin:6px; */
+    display:inline-block;
+    position:relative;
+    text-align:center;
+}
+.circle canvas{
+    vertical-align:top;
+    width:70px !important;
+    height:70px !important;
+}
+.circle strong{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    text-align:center;
+    line-height:40px;
+    font-size:1rem;
+    transform:translate(-50%,-50%);
+}
+.skill-box span{
+    display:block;
+    color:#aaa;
+    margin-top:0;
+    font-size:0.9rem;
+    text-align:center;
+}
+.skill-container{
+    width:100%;
+    height:100%;
+    /* border:1px solid black; */
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+}
+.skill-box{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0;
+}
+
+
+@media screen and (min-width:768px){
+    .skill-box{
+        width:30%;
+    }
+    .circle canvas{
+        width:85px !important;
+        height:85px !important;
+    }
+}
+@media screen and (min-width:1024px){
+    .circle canvas{
+        width:100px !important;
+        height:100px !important;
+    }
+    .skill-container{
+        max-width:1000px;
+        margin:auto;
+    }
+}

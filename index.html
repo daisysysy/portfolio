@@ -24,24 +24,6 @@
         </div>
         <main>
             <section class="section" id="cover">
-<!--                 <header>
-                    <div id="header-side">
-                        <h1>PORTFOLIO</h1>
-                        <nav class="nav-wrap">
-                            <button class="nav-button">Work view</button>
-                            <div class="nav-list">
-                                <a href="#cover">Cover</a>
-                                <a href="#self">Self</a>
-                                <a href="#skill">Skill</a>
-                                <a href="#page">Webpage</a>
-                                <a href="#detail">Detailpage</a>
-                                <a href="#banner">Banner</a>
-                                <a href="#icon">Icon</a>
-                                <a href="#epilogue">Epilogue</a>
-                            </div>
-                        </nav>
-                    </div>
-                </header> -->
                 <div class="cover-box">
                     <div class="c-title">
                         <div class="m-cover-title">
@@ -65,32 +47,105 @@
                 </div>
             </section> 
             <section class="section" id="self">      
-                <div class="introduce">
-                    <div class="intro-left">
-                        <h2>자기소개</h2>
-                        <div class="photo">
-                            <img src="" alt="">
+                <h2>Self-Introduction</h2>
+                <div class="intro-left">
+                    <ul>
+                        <li><strong>이름:</strong></li>
+                        <li><strong>생년월일:</strong></li>
+                        <li><strong>경력사항:</strong></li>
+                    </ul>
+                    <div class="about">
+                        자기소개란
+                    </div>
+                </div>
+                <div class="intro-right">
+                    <link rel="stylesheet" href="./css/progress.css">
+                    <div class="skill-container">
+                        <div class="skill-box">
+                            <div class="photoshop circle">
+                                <strong></strong>
+                            </div>
+                            <span>Photoshop</span>
+                        </div>
+                        <div class="skill-box">
+                            <div class="illustrator circle">
+                                <strong></strong>
+                            </div>
+                            <span>Illustrator</span>
+                        </div>
+                        <div class="skill-box">
+                            <div class="figma circle">
+                                <strong></strong>
+                            </div>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-box">
+                            <div class="html circle">
+                                <strong></strong>
+                            </div>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-box">
+                            <div class="css circle">
+                                <strong></strong>
+                            </div>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-box">
+                            <div class="jquery circle">
+                                <strong></strong>
+                            </div>
+                            <span>JQuery</span>
                         </div>
                     </div>
-                    <div class="intro-right">
-                        <ul>
-                            <li><strong>이름:</strong></li>
-                            <li><strong>생년월일:</strong></li>
-                            <li><strong>경력사항:</strong></li>
-                        </ul>
-                        <div class="about">
-                            자기소개란
-                        </div>
-                    </div>
+                    <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
                 </div>
             </section>
             <section class="section" id="page">
                 <h2>webpage</h2>
                 <div class="page-box-wrap">
-                    <div class="page-img-box">
-                        <img src="./images/webpage-cover.PNG">
+                    <div class="m-page-img-box">
+                        <img src="./images/mobile-cover.PNG" alt="제작 모바일 웹사이트 미리보기">
                     </div>
-                    <div class="page-txt-box"></div>
+                    <div class="page-img-box">
+                        <img src="./images/webpage-cover.PNG" alt="제작 웹사이트 미리보기">
+                    </div>
+                    <div class="iconbt">
+                        <span class="response">
+                            <img src="./images/response.png" alt="반응형 아이콘">
+                        </span>
+                        <div class="bt">
+                            <a href="https://daisysysy.github.io/modernplate/" target="_blank">바로가기</a>
+                            <span class="more">설명보기</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-popup">
+                    <div class="page-popup-body">
+                        <div class="page-popup-group">
+                            <div class="page-popup-left">
+                                <div class="m-page-popup-img-box">
+                                    <img src="./images/mobile-cover.PNG" alt="제작 모바일 웹사이트 미리보기">
+                                </div>
+                                <div class="page-popup-img-box">
+                                    <img src="./images/webpage-cover.PNG" alt="제작 웹사이트 미리보기">
+                                </div>
+                                <div class="page-popup-bt">
+                                    <span class="p-response">
+                                        <img src="./images/response.png" alt="반응형 아이콘">
+                                    </span>
+                                    <a href="https://daisysysy.github.io/modernplate/" target="_blank">바로가기</a>
+                                </div>
+                            </div>
+                            <div class="page-popup-right">
+                                <p>그릇 브랜드 사이트를 만들었습니다.<br>
+                                    그릇하면 떠오르는 정갈한 느낌을 주려 했고,<br>
+                                    그릇 브랜드 하면 많이들 사용하는 파란 계통의 색상에서 조금 다른 인상을 남기기 위해 보라 계통의 색상을 주색상으로 잡았습니다.<br>
+                                    보조 색상은 여백을 살리고 과한 느낌을 주지 않기 위해 주로 무채색 계열의 흰색, 연한 회색, 종종 검정색을 사용하였습니다.</p>
+                            </div>
+                        </div>
+                        <button class="page-popup-close">X</button>
+                    </div>
                 </div>
             </section>
             <section class="section" id="detail">
@@ -114,18 +169,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="detail-popup">
+                    <div class="detail-popup-body">
+                        <button class="detail-popup-close">X</button>
+                        <span>
+                            <img src="./images/detail-c.jpg" alt="의류 상세페이지">
+                        </span>
+                    </div>
+                </div>
             </section>
             <section class="section" id="banner">
                 <h2>Banner Design</h2>
                 <div class="banner-container">
                     <div class="banner-box-wrap">
-                        <div class="banner-box">
-                            <span>
-                                <img src="./images/30sale.jpg" alt="의자 30% 세일">
-                            </span>
-                            <span>
-                                <img src="./images/bigsale.jpg" alt="가구 빅세일">
-                            </span>
+                        <div class="banner-group">
+                            <div class="banner-box">
+                                <span>
+                                    <img src="./images/30sale.jpg" alt="의자 30% 세일">
+                                </span>
+                                
+                            </div>
+                            <div class="banner-box">
+                                <span>
+                                    <img src="./images/bigsale.jpg" alt="가구 빅세일">
+                                </span>
+                            </div>
                         </div>
                         <div class="banner-box">
                             <span>
@@ -139,24 +207,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="banner-popup">
+                    <div class="banner-popup-body">
+                        <button class="banner-popup-close">X</button>
+                        <span>
+                            <img src="./images/30sale.jpg" alt="의자 30% 세일">
+                        </span>
+                    </div>
+                </div>
             </section>
             <section class="section" id="icon">
-                <h2>icon</h2>
+                <h2>Icon</h2>
                 <div class="icon-box">
                     <span>
-                        <img src="./images/icon1.png" alt="">
+                        <img src="./images/icon1.png" alt="전자레인지 사용 가능 아이콘">
                     </span>
                     <span>
-                        <img src="./images/icon2.png" alt="">
+                        <img src="./images/icon2.png" alt="오븐 사용 불가 아이콘">
                     </span>
                     <span>
-                        <img src="./images/icon3.png" alt="">
+                        <img src="./images/icon3.png" alt="식기세척기 사용 가능 아이콘">
                     </span>
                     <span>
-                        <img src="./images/icon4.png" alt="">
+                        <img src="./images/icon4.png" alt="직화 사용 금지 아이콘">
                     </span>
                     <span>
-                        <img src="./images/icon5.png" alt="">
+                        <img src="./images/icon5.png" alt="철수세미 사용 금지 아이콘">
                     </span>
                 </div>
             </section>

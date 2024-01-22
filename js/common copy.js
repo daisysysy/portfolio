@@ -3,7 +3,6 @@ $(document).ready(function(){
     var winHeight=0;
     var winWidth;
 
-
     // 슬라이더 변수
 
     // 터치 변수
@@ -94,47 +93,6 @@ $(document).ready(function(){
     // 활성/비활성
 
     // 스킬
-    function $circle(){
-        $('.photoshop.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#e6e6fa', '#ffc0cb']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        $('.illustrator.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#ffc0cb', '#e6e6fa']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        $('.figma.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#e6e6fa', '#ffc0cb']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        $('.html.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#ffc0cb', '#e6e6fa']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        $('.css.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#e6e6fa', '#ffc0cb']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        $('.jquery.circle').circleProgress({
-            value: 0.8,
-            fill: {gradient: ['#ffc0cb', '#e6e6fa']}
-          }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
-          });
-        
-    }
-    $circle();
-
 
     // 애니메이션
 
@@ -185,84 +143,8 @@ $(document).ready(function(){
             })
         })
 
-
-        // hover시 스크롤
-        $(".page-popup-body").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".detail-box").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".banner-container").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".icon-box").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-
-
-
         // 마우스 무브, 터치 무브
     }
     wheel();
-
-
-
-
-
-    // 웹페이지 팝업
-    $(".more").click(function(){
-        $(".page-popup").show();
-    })
-    $(".page-popup-close").click(function(){
-        $(".page-popup").hide();
-    })
-
-
-
-    // 상세페이지 팝업
-    $(".detail-box span").click(function(){
-        $(".detail-popup").show();
-        $(".detail-popup-body span").html($(this).parents(".detail-box").find("span").html())
-    })
-    $(".detail-popup-close").click(function(){
-        $(".detail-popup").hide();
-    })
-
-
-    // 배너 팝업
-
-    $(".banner-box span").click(function(){
-        $(".banner-popup").show();
-        $(".banner-popup-body span").html($(this).parents(".banner-box").find("span").html())
-    })
-    $(".banner-popup-close").click(function(){
-        $(".banner-popup").hide();
-    })
-
-
-
-
-
 })
 // jquery 끝
