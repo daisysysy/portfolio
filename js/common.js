@@ -2,6 +2,7 @@ $(document).ready(function(){
     // 브라우저의 높이 변수 -섹션의 높이로 활용
     var winHeight=0;
     var winWidth;
+    var activeIndex=0;
 
 
     // 슬라이더 변수
@@ -30,6 +31,7 @@ $(document).ready(function(){
     $(window).resize(function(){
         $wh()
         wheel();
+        scrollSize();
 
         // 높이가 조절될 때, 섹션의 높이를 조절하기 위한 부분
         $("html,body").stop().animate({
@@ -37,6 +39,55 @@ $(document).ready(function(){
         },0)
 
     })
+
+
+
+            // hover시 스크롤
+            $(".page-popup-body").hover(
+                function(){
+                    $(".section").off();
+                },
+                function(){
+                    wheel();
+                }
+            )
+            $(".detail-box").hover(
+                function(){
+                    $(".section").off();
+                },
+                function(){
+                    wheel();
+                }
+            )
+            
+
+
+            function scrollSize(){
+                if($(window).width()<1024){
+                    $(".banner-container").mouseenter(function(){
+                        $(".section").off();
+                    })
+                    $(".icon-box").mouseenter(function(){
+                        $(".section").off();
+                    })
+                }else{
+                    $(".banner-container").mouseenter(function(){
+                        wheel();
+                    })
+                    $(".icon-box").mouseenter(function(){
+                        wheel();
+                    })
+                }
+            }
+            scrollSize();
+
+
+
+
+
+
+
+
 
     // 헤더 네비, 사이드 네비 구성 처리 및
     var $navBool=true;
@@ -136,7 +187,25 @@ $(document).ready(function(){
     $circle();
 
 
+
+    function $animation(){
+        if(activeIndex+1==2){
+            console.log("activeIndex:"+activeIndex)
+            $circle();
+        }
+    }
+    $animation();
+    
+
+
     // 애니메이션
+
+
+
+
+    
+       
+
 
     // 휠 함수
     function wheel(){
@@ -177,49 +246,15 @@ $(document).ready(function(){
                         $(".side-nav a").eq(index+1).addClass("side-nav-active")
                     }
                 }
+                $animation();
 
                 $("html,body").stop().animate({
                     scrollTop:moveTop
                 },800);
+
                 return false;
             })
         })
-
-
-        // hover시 스크롤
-        $(".page-popup-body").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".detail-box").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".banner-container").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-        $(".icon-box").hover(
-            function(){
-                $(".section").off();
-            },
-            function(){
-                wheel();
-            }
-        )
-
 
 
         // 마우스 무브, 터치 무브
@@ -231,13 +266,12 @@ $(document).ready(function(){
 
 
     // 웹페이지 팝업
-    $(".more").click(function(){
+    $(".more, .page-box-wrap").click(function(){
         $(".page-popup").show();
     })
-    $(".page-popup-close").click(function(){
+    $(".page-popup-close, .dimmed").click(function(){
         $(".page-popup").hide();
     })
-
 
 
     // 상세페이지 팝업
@@ -245,7 +279,7 @@ $(document).ready(function(){
         $(".detail-popup").show();
         $(".detail-popup-body span").html($(this).parents(".detail-box").find("span").html())
     })
-    $(".detail-popup-close").click(function(){
+    $(".detail-popup-close, .dimmed").click(function(){
         $(".detail-popup").hide();
     })
 
@@ -256,7 +290,7 @@ $(document).ready(function(){
         $(".banner-popup").show();
         $(".banner-popup-body span").html($(this).parents(".banner-box").find("span").html())
     })
-    $(".banner-popup-close").click(function(){
+    $(".banner-popup-close, .dimmed").click(function(){
         $(".banner-popup").hide();
     })
 
