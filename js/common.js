@@ -187,6 +187,7 @@ $(document).ready(function(){
     $circle();
 
 
+    // 애니메이션
 
     function $animation(){
         if(activeIndex+1==2){
@@ -195,10 +196,6 @@ $(document).ready(function(){
         }
     }
     $animation();
-    
-
-
-    // 애니메이션
 
 
 
@@ -268,9 +265,28 @@ $(document).ready(function(){
     // 웹페이지 팝업
     $(".more, .page-box-wrap").click(function(){
         $(".page-popup").show();
+/*         $(".section").off();
+        $("html,body").css({
+            overflow:"hidden"
+        })
+        console.log("click") */
+
+        $('.section').on('scroll touchmove mousewheel', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+            });
+    })
+    $(".page-popup").mouseenter(function(){
+       /*  $(".section").off();
+        $("html,body").css({
+            overflow:"hidden"
+        })
+        console.log("hover") */
     })
     $(".page-popup-close, .dimmed").click(function(){
         $(".page-popup").hide();
+
     })
 
 
