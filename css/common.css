@@ -246,20 +246,22 @@ header{
 #self{
     background:url(../images/bg-re.jpg) no-repeat;
     background-size:cover;
+}
+.intro-wrap{
+    width:80%;
+    height:80%;
+    /* border:1px solid black; */
     display:flex;
     flex-direction:column;
+    padding:20px;
     justify-content:center;
     align-items:center;
 }
 .intro-left{
-    width:80%;
-    height:40%;
+    width:100%;
+    height:50%;
     /* border:1px solid black; */
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    padding:0 50px 50px 50px;
     text-align:left;
     line-height:200%;
 }
@@ -270,9 +272,10 @@ header{
     width:100%;
 }
 .intro-right{
-    width:80%;
-    height:40%;
+    width:100%;
+    height:50%;
     /* border:1px solid black; */
+    padding-bottom:50px;
 }
 #self h2{
     position:absolute;
@@ -359,26 +362,27 @@ header{
 }
 .page-popup{
     display:none;
-    width:100%;
+/*     width:100%;
     height:100%;
     position:fixed;
     left:0;
     top:0;
-    z-index:99999;
-    
+    z-index:99999;  */
 }
 .dimmed{
     width:100%;
     height:100%;
     background-color:rgba(0,0,0,0.5);
-    position:absolute;
+    /* position:absolute; */
+    position:fixed;
     left:0;
     top:0;
-    z-index:9;
+    /* z-index:9; */
     
 }
 .page-popup-body{
-    position:relative;
+    /* position:relative; */
+    position:fixed;
     width:80%;
     height:80%;
     background-color:whitesmoke;
@@ -386,7 +390,7 @@ header{
     left:50%;
     transform:translate(-50%,-50%);
     overflow:auto;
-    z-index:99;
+    /* z-index:99; */
 }
 .page-popup-close{
     position:absolute;
@@ -654,15 +658,16 @@ header{
     right:10px;
     font-size:1.1rem;
 }
-.icon-box{
+.icon-box-wrap{
     width:80%;
     height:80%;
     background-color:aliceblue;
     overflow:auto;
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
+}
+.icon-box{
+    width:100%;
 }
 .icon-box span{
     width:100%;
@@ -818,8 +823,21 @@ header{
     .c-c-p-top{
         margin-right:50px;
     }
-    .intro-left{
+    .intro-wrap{
         flex-direction:row;
+        /* border:1px solid black; */
+    }
+    .intro-left{
+        width:50%;
+        height:100%;
+        /* border:1px solid black; */
+        padding:50px;
+        line-height:500%;
+    }
+    .intro-right{
+        width:50%;
+        height:100%;
+        /* border:1px solid black; */
     }
     .page-box-wrap{
         width:80%;
@@ -942,6 +960,7 @@ header{
     }
     .detail-popup-body{
         width:65%;
+        padding:50px 0;
     }
     .banner-container{
         height:auto;
@@ -960,28 +979,16 @@ header{
     .banner-popup-body{
         width:65%;
     }
+    .icon-box-wrap{
+        padding:10px;
+    }
     .icon-box{
-        flex-direction:row;
-        flex-wrap:wrap;
+        width:100%;
+        height:50%;
+        display:flex;
         justify-content:space-around;
         align-items:center;
-        overflow:inherit;
-        /* border:1px solid black; */
-
     }
-    .icon-box span{
-        width:33%;
-        height:50%;
-        margin:auto;
-        /* border:1px solid black; */
-        text-align:center;
-    }
-    .icon-box span img{
-        width:80%;
-        height:100%;
-
-    }
-
 /*     #epilogue{
         flex-direction:row;
         justify-content:center;
@@ -999,6 +1006,9 @@ header{
 @media screen and (min-width:1280px){
     .c-contents{
         right:18%;
+    }
+    .icon-box-wrap{
+        padding:30px;
     }
 }
 @media screen and (min-width:1440px){

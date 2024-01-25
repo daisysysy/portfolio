@@ -42,26 +42,6 @@ $(document).ready(function(){
 
 
 
-            // hover시 스크롤
-            $(".page-popup-body").hover(
-                function(){
-                    $(".section").off();
-                },
-                function(){
-                    wheel();
-                }
-            )
-            $(".detail-box").hover(
-                function(){
-                    $(".section").off();
-                },
-                function(){
-                    wheel();
-                }
-            )
-            
-
-
             function scrollSize(){
                 if($(window).width()<1024){
                     $(".banner-container").mouseenter(function(){
@@ -80,7 +60,6 @@ $(document).ready(function(){
                 }
             }
             scrollSize();
-
 
 
 
@@ -261,31 +240,37 @@ $(document).ready(function(){
 
 
 
+     // hover시 스크롤
+     $(".detail-box").hover(
+        function(){
+            $(".section").off();
+        },
+        function(){
+            wheel();
+        }
+    )
+
+
+
+
 
     // 웹페이지 팝업
     $(".more, .page-box-wrap").click(function(){
         $(".page-popup").show();
-/*         $(".section").off();
-        $("html,body").css({
-            overflow:"hidden"
-        })
-        console.log("click") */
 
-        $('.section').on('scroll touchmove mousewheel', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-            });
-    })
-    $(".page-popup").mouseenter(function(){
-       /*  $(".section").off();
+        $(".section").off();
         $("html,body").css({
             overflow:"hidden"
         })
-        console.log("hover") */
     })
+
     $(".page-popup-close, .dimmed").click(function(){
         $(".page-popup").hide();
+
+        $("html,body").css({
+            overflow:"inherit"
+        })
+        wheel();
 
     })
 
@@ -294,9 +279,19 @@ $(document).ready(function(){
     $(".detail-box span").click(function(){
         $(".detail-popup").show();
         $(".detail-popup-body span").html($(this).parents(".detail-box").find("span").html())
+
+        $(".section").off();
+        $("html,body").css({
+            overflow:"hidden"
+        })
     })
     $(".detail-popup-close, .dimmed").click(function(){
         $(".detail-popup").hide();
+
+        $("html,body").css({
+            overflow:"inherit"
+        })
+        wheel();
     })
 
 
@@ -305,9 +300,19 @@ $(document).ready(function(){
     $(".banner-box span").click(function(){
         $(".banner-popup").show();
         $(".banner-popup-body span").html($(this).parents(".banner-box").find("span").html())
+
+        $(".section").off();
+        $("html,body").css({
+            overflow:"hidden"
+        })
     })
     $(".banner-popup-close, .dimmed").click(function(){
         $(".banner-popup").hide();
+
+        $("html,body").css({
+            overflow:"inherit"
+        })
+        wheel();
     })
 
 
