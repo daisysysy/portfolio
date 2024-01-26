@@ -3,6 +3,7 @@ $(document).ready(function(){
     var winHeight=0;
     var winWidth;
     var activeIndex=0;
+    
 
 
     // 슬라이더 변수
@@ -69,7 +70,7 @@ $(document).ready(function(){
 
 
     // 헤더 네비, 사이드 네비 구성 처리 및
-    var $navBool=true;
+/*     var $navBool=true;
     $(".nav-button").click(function(){
         if($navBool){
             $(this).addClass("bg-active")
@@ -80,34 +81,11 @@ $(document).ready(function(){
             $(this).removeClass("active")
             $navBool=true;
         }
-    })
+    }) */
 
-    // 스크롤 애니메이션
-    $(window).scroll(function(){
-        $scrollTop=$(window).scrollTop();
-        if($scrollTop<70){
-            $("header").removeClass("headerActive")
-        }else{
-            $("header").addClass("headerActive")
-        }
-    })
 
     // 해시 애니메이션
-    $(".nav-list a").each(function(index){
-        $(this).click(function(){
-            $hash=$(this.hash).offset().top
-            $("html,body").stop().animate({
-                scrollTop:$hash
-            })
-            $(".nav-list a").removeClass("clickActive");
-            $(this).addClass("clickActive")
-            $(".nav-list").removeClass("active")
-            $navBool=true;
-            $(".side-nav a").removeClass("side-nav-active")
-            $(".side nav a").eq(index).addClass("side-nav-active")
 
-        })
-    })
     $(".side-nav a").each(function(index){
         $(this).click(function(){
             $hash=$(this.hash).offset().top
@@ -116,8 +94,6 @@ $(document).ready(function(){
             })
             $(".side-nav a").removeClass("side-nav-active")
             $(this).addClass("side-nav-active");
-            $(".nav-list a").removeClass("clickActive");
-            $(".nav-list a").eq(index).addClass("clickActive")
         })
     })
 
@@ -195,13 +171,7 @@ $(document).ready(function(){
                         var moveTop=$(this).prev().offset().top;
                         console.log("섹션의 위치:"+moveTop)
                         activeIndex=index-1;
-
-                        // 휠을 올렸을 때 애니메이션할 위치
-                        if(moveTop<$(".section").eq(1).offset().top){
-                            $("header").removeClass("headerActive")
-                        }
-                        $(".nav-list a").eq(index).removeClass("clickActive")
-                        $(".nav-list a").eq(index-1).addClass("clickActive")
+                
                         $(".side-nav a").eq(index).removeClass("side-nav-active")
                         $(".side-nav a").eq(index-1).addClass("side-nav-active")
                     }
@@ -212,12 +182,6 @@ $(document).ready(function(){
                         activeIndex=index+1;
                         console.log("섹션의 위치:"+moveTop)
 
-                        // 휠을 내렸을 때 애니메이션할 위치
-                        if(moveTop>$(".section").eq(1).offset().top){
-                            $("header").addClass("headerActive")
-                        }
-                        $(".nav-list a").eq(index).removeClass("clickActive")
-                        $(".nav-list a").eq(index+1).addClass("clickActive")
                         $(".side-nav a").eq(index).removeClass("side-nav-active")
                         $(".side-nav a").eq(index+1).addClass("side-nav-active")
                     }
@@ -240,15 +204,34 @@ $(document).ready(function(){
 
 
 
-     // hover시 스크롤
-     $(".detail-box").hover(
-        function(){
-            $(".section").off();
-        },
-        function(){
-            wheel();
+
+
+         // hover시 스크롤
+/*          $(".detail-box").hover(
+            function(){
+                $(".section").off();
+            },
+            function(){
+                wheel();
+            }
+        )
+ */
+
+
+
+        // 상세페이지 스크롤 함수 (팝업 실행시 함수를 꺼서 뒤를 고정)
+        function detailScroll(){
+            $(".detail-box").on("mouseenter",function(){
+                $(".section").off();
+            })
+            $(".detail-box").on("mouseleave",function(){
+                wheel();
+            })
         }
-    )
+        detailScroll();
+
+
+
 
 
 
@@ -280,7 +263,9 @@ $(document).ready(function(){
         $(".detail-popup").show();
         $(".detail-popup-body span").html($(this).parents(".detail-box").find("span").html())
 
+        $(".detail-box").off();
         $(".section").off();
+        // 함수를 끌 때 선택자로 끈다.
         $("html,body").css({
             overflow:"hidden"
         })
@@ -292,6 +277,7 @@ $(document).ready(function(){
             overflow:"inherit"
         })
         wheel();
+        detailScroll();
     })
 
 

@@ -124,7 +124,7 @@ section{
     position:relative;
     overflow:hidden;
 }
-/* header{
+header{
     height:100px;
     position:fixed;
     top:0;
@@ -139,11 +139,11 @@ section{
     margin:auto;
     position:relative;
     display:flex;
-    border:1px solid black;
+    /* border:1px solid black; */
     justify-content:space-between;
     align-items:center;
     padding:0 50px;
-} */
+}
 .cover-box{
     width:100%;
     height:100%;
@@ -196,22 +196,22 @@ section{
     font-weight:500;
     color:#424242;
 }
-/* .nav-wrap{
+.nav-wrap{
     width:100px;
-} */
-/* .nav-button{
+}
+.nav-button{
     width:100%;
     height:50px;
     position:relative;
     z-index:9;
     background-color:palegreen;
     border:none;
-    border:1px solid black;
-} */
-/* .nav-button.bg-active{
+    /* border:1px solid black; */
+}
+.nav-button.bg-active{
     background:yellowgreen;
-} */
-/* .nav-list{
+}
+.nav-list{
     width:100%;
     height:100%;
     position:fixed;
@@ -227,11 +227,11 @@ section{
     width:0;
     overflow:hidden;
     transition:0.5s;
-} */
-/* .nav-list.active{
+}
+.nav-list.active{
     width:100%;
-} */
-/* .nav-list a{
+}
+.nav-list a{
     color:#303033;
     font-weight:900;
     background-color:yellow;
@@ -239,10 +239,10 @@ section{
     text-align:center;
     padding:5px 0;
     border-radius:5px;
-} */
-/* .nav-list a.clickActive{
+}
+.nav-list a.clickActive{
     background-color:greenyellow;
-} */
+}
 #self{
     background:url(../images/bg-re.jpg) no-repeat;
     background-size:cover;
