@@ -262,18 +262,15 @@ section{
     height:50%;
     /* border:1px solid black; */
     padding:0 50px 50px 50px;
-    line-height:120%;
+    line-height:200%;
     text-align:left;
+    font-size:0.8rem;
 }
 .intro-left ul{
     width:100%;
 }
 .intro-left ul li{
     width:100%;
-}
-.plz{
-    line-height:250%;
-    padding-top:25px;
 }
 .intro-right{
     width:100%;
@@ -842,7 +839,12 @@ section{
         height:100%;
         /* border:1px solid black; */
         padding:50px;
-        line-height:500%;
+        line-height:400%;
+        font-size:1rem;
+    }
+    .plz{
+        line-height:250%;
+        padding-top:10px;
     }
     .intro-right{
         width:50%;
