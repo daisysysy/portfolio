@@ -86,6 +86,7 @@ $(document).ready(function(){
 
     // 해시 애니메이션
 
+
     $(".side-nav a").each(function(index){
         $(this).click(function(){
             $hash=$(this.hash).offset().top
@@ -94,18 +95,23 @@ $(document).ready(function(){
             })
             $(".side-nav a").removeClass("side-nav-active")
             $(this).addClass("side-nav-active");
+
+            activeIndex=index;
         })
     })
+
+
+    
 
     // 활성/비활성
 
     // 스킬
     function $circle(){
         $('.photoshop.circle').circleProgress({
-            value: 0.8,
+            value: 0.85,
             fill: {gradient: ['#e6e6fa', '#ffc0cb']}
           }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
+            $(this).find('strong').html(Math.round(85 * progress) + '<i>%</i>');
           });
         $('.illustrator.circle').circleProgress({
             value: 0.8,
@@ -120,22 +126,22 @@ $(document).ready(function(){
             $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
           });
         $('.html.circle').circleProgress({
-            value: 0.8,
+            value: 0.85,
             fill: {gradient: ['#ffc0cb', '#e6e6fa']}
           }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
+            $(this).find('strong').html(Math.round(85 * progress) + '<i>%</i>');
           });
         $('.css.circle').circleProgress({
-            value: 0.8,
+            value: 0.85,
             fill: {gradient: ['#e6e6fa', '#ffc0cb']}
           }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
+            $(this).find('strong').html(Math.round(85 * progress) + '<i>%</i>');
           });
         $('.jquery.circle').circleProgress({
-            value: 0.8,
+            value: 0.75,
             fill: {gradient: ['#ffc0cb', '#e6e6fa']}
           }).on('circle-animation-progress', function(event, progress) {
-            $(this).find('strong').html(Math.round(80 * progress) + '<i>%</i>');
+            $(this).find('strong').html(Math.round(75 * progress) + '<i>%</i>');
           });
         
     }

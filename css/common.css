@@ -262,14 +262,18 @@ section{
     height:50%;
     /* border:1px solid black; */
     padding:0 50px 50px 50px;
+    line-height:120%;
     text-align:left;
-    line-height:200%;
 }
 .intro-left ul{
     width:100%;
 }
 .intro-left ul li{
     width:100%;
+}
+.plz{
+    line-height:250%;
+    padding-top:25px;
 }
 .intro-right{
     width:100%;
@@ -1001,7 +1005,7 @@ section{
     .banner-box-wrap p{
         display:block;
         position:absolute;
-        top:9px;
+        top:7px;
         right:2%;
         font-weight:500;
         font-size:0.9rem;
@@ -1011,7 +1015,7 @@ section{
         /* border:1px solid black; */
     }
     #banner-s .banner-box{
-        padding:15px;
+        padding:10px;
         /* border:1px solid black; */
     }
     .banner-popup-body{
@@ -1066,6 +1070,11 @@ section{
     }
     .banner-box-wrap p{
         font-size:1rem;
+        top:9px;
+    }
+    #banner-s .banner-box{
+        padding:15px;
+        /* border:1px solid black; */
     }
     .icon-box-wrap{
         padding:30px;
